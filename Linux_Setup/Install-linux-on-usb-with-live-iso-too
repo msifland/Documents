@@ -1,0 +1,61 @@
+-To install linux on to a flash drive, simply download the live.iso distro you want, boot into it and insert you flash drive to install to and got through the install process.
+	IMPORTANT: INSTALL GRUB TO /dev/sdX(usb drive), not to /dev/sda(main hard drive)
+Then reboot, should be fine.
+
+
+-To install a grub entry for and live.iso install onto the same drive:
+	-Download live.iso of choice
+	-Put it into a folder on the main usb linux install /home/msifland/<some_folder>/
+	-Then open this file:
+		sudo subl /etc/grub.d/grub.cfg
+	Add this to the bottom of the file:
+
+### Begin custom entry ###
+exec tail -n +3 $0
+
+menuentry "Mate 18.04 Live-ISO" {
+	set isofile="/home/msifland/mate_iso/ubuntu-mate-18.04-desktop-amd64.iso"
+	loopback loop (hd0,1)$isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/casper/initrd.lz
+}
+### End Custom entry ###
+
+		-A few things to make note of here on this entry.
+			1. The title of what you want it to say is the first line in quotes.	
+			2. The second line sets the path of the file you have on your system. It will boot straight from the .iso
+			3. The third line is what mounts the .iso.
+			4. The fourth and fifth lines tells it what to look for inside the .iso file. You may have to open the .iso file to see the file names and make sure the are correct. in peticular the 'vmlinuz' and 'initrd.lz' files.
+
+-To make drive last longer disable journal. Boot to a linux machine, plug in the usb drive you have installed linux on and type this in terminal, obviously changing the 'X' and 'Y' to what it should be:
+		tune2fs -O ^has_journal /dev/sdXY
+
+####################################
+-Alternate method, not as reliable.
+
+	-Then open this file(if it doesn't exist, then create it and make sure permissions are set to executable):
+		sudo subl /etc/grub.d/40_custom
+		-Insert this into the file:
+
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the menu entries you want to add after this comment.  Be careful not to change the 'exec tail' line above.
+
+menuentry "Mate 18.04 Live-ISO" {
+	set isofile="/home/msifland/mate_iso/ubuntu-mate-18.04-desktop-amd64.iso"
+	loopback loop (hd0,1)$isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/casper/initrd.lz
+}
+
+		-A few things to make note of here on this entry.
+			1. The title of what you want it to say is the first line in quotes.	
+			2. The second line sets the path of the file you have on your system. It will boot straight from the .iso
+			3. The third line is what mounts the .iso.
+			4. The fourth and fifth lines tells it what to look for inside the .iso file. You may have to open the .iso file to see the file names and make sure the are correct. in peticular the 'vmlinuz' and 'initrd.lz' files.
+
+		-After adding this to the file and saving it, open terminal and run:
+			sudo grub-mkconfig
+				-Let it generate, it will take a couple minutes.
+			 	-Open /boot/grub/grub.cfg and remove entries not needed. Usually stuff between 30_os_prober. Also make sure that 40_custom entry is there as well, usually toward the bottom.
+		-Then your menu entry should be in the grub menu and should boot to a live cd environment.

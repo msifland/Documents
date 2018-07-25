@@ -1,0 +1,33 @@
+cherry picking and reseting git...
+
+
+git fetch https://github.com/CyanogenMod/android_device_moto_shamu cm-13.0 && git cherry-pick d70bd265d9cc2a5c027f45eaed2e6a957e93cd9d
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 1 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/CyanogenMod/android_device_moto_shamu
+ * branch            cm-13.0    -> FETCH_HEAD
+HEAD detached from 59cc20e
+You are currently cherry-picking commit e4a6a43.
+
+nothing to commit, working directory clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git reset'
+msifland@msifland-lt:~/roms/vrtoxin/device/moto/shamu$ git reset
+msifland@msifland-lt:~/roms/vrtoxin/device/moto/shamu$
+
+
+
+commiting:
+git add --all
+git commit -m "this is the change"
+git push origin HEAD:mm6.0
+or
+git push vrtoxin-dev HEAD:mm6.0
+
+validus cherry pick git fetch https://review.gzospgzr.com/GZOSP/hardware_qcom_audio refs/changes/55/355/1 && git cherry-pick FETCH_HEAD

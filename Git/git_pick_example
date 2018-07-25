@@ -1,0 +1,43 @@
+#!/bin/bash
+# This is an example of add a cherry -pick to your build script. First the repo has to be forked into your github then adding something like this:
+
+
+	# This section should be temporary.
+	# Fix jackk flags for building. frameworks/base/services/core/Android.mk
+	read -t 10 -p "Would you like to apply the Jack flag commit?(10 seconds)[y/n]: " yncommit
+	if [[ ! $yncommit =~ ^([nN][oO]|[nN])$ ]]; then
+		echo -e "${COLOR}"
+		echo "Fixing Jack flags in framework/base/core/Android.mk for building on ArchLinux."
+		echo "Check if Jack flag fix has been applied..."
+		sleep 1
+		if ! grep -q "url = https://github.com/msifland" $HOME_DIR/.repo/projects/frameworks/base.git/config; then
+			echo "URL is missing, adding fix now..."
+			echo -e "${RESTORE}"
+			cd $HOME_DIR/frameworks/base
+			git remote add my-fix https://github.com/msifland/frameworks_base
+			git fetch my-fix
+			git cherry-pick 7e30257
+		else
+			echo -e "${COLOR}"
+			echo "URL is present, checking for commit..."
+			echo -e "${RESTORE}"
+			sleep 1
+			if [[ ! -f "$HOME_DIR/frameworks/base/.git/MERGE_RR" ]]; then
+				echo -e "${COLOR}"
+				echo "Commit is missing, adding now..."
+				echo -e "${RESTORE}"
+				sleep 1
+				cd $HOME_DIR/frameworks/base
+				git fetch my-fix
+				git cherry-pick 7e30257
+			else
+				echo -e "${COLOR}"
+				echo "Commit is also in place, good to go."
+				echo -e "${RESTORE}"
+			fi
+		fi
+	else
+		echo -e "${COLOR}"
+		echo "Ok, not appling commit."
+		echo -e "${RESTORE}"
+	fi

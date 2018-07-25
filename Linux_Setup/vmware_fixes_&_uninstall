@@ -1,0 +1,6 @@
+sudo vmware-modconfig --console --install-all
+sudo modprobe vmmom
+sudo modprobe vmci
+
+Uninstall:
+sudo vmware-installer -u vmware-player

@@ -1,0 +1,246 @@
+/*===================================================
+==========AUTHOR INFO ON SINGLEPAGE==================
+=====================================================*/
+div#author-info {
+	box-shadow: 0 0 5px #999999;;
+	-webkit-box-shadow: 0 0 5px #999999; 
+	-moz-box-shadow: 0 0 5px #999999;
+	border:1px solid #aaaaaa;; 
+	background: #fafafa; padding: 10px; margin: 0 0 15px 0;
+	border-radius: 8px;
+	overflow: auto;
+	width:700px;
+	padding:8px;
+	text-align:justify;
+	margin:10px 0 10px 0;
+}	
+div#author-info div#author-image {
+	float: left; margin: 0 10px 5px 0; border: 5px solid #DCDCE1;
+}
+div#author-info .socialimg{
+	vertical-align: middle;
+}
+/* -- end author info -- */
+#breadcrumbs{
+	padding:0;
+	margin: 10px 0 0 20px;
+}
+#v4l-fblike{
+	float:left;
+	margin-top:5px;
+	padding-top:10px;
+}
+li.page-item-2297, li#menu-item-6678{
+	background:url(images/hot3.gif) no-repeat top right;
+}
+li.cat-item-2690, li.menu-item-6392{
+	background:url(images/new-red.gif) no-repeat top center;
+}
+li.cat-item-47, li.menu-item-6401, li#menu-item-6679{
+	background:url(images/hot-red.gif) no-repeat top center;
+}
+.v4lsocialize{
+	height:42px;
+	width:360px;
+	margin:0 auto 0 auto;
+}
+.v4lsocialize a{
+	padding:0;
+}
+.v4lsocialize img{
+	text-decoration:none;
+	border:none;
+}
+/*===================================================
+==========RELATED POST & POPULAR POST================
+=====================================================*/
+.v4l-related{
+	float:left;
+	width:530px !important;
+	margin:0 0px 10px 0px;
+	padding:0;
+}
+#outbrain_widget_0{width: 500px !important;}
+.v4l-adsense{
+	float:left;
+	width:200px !important;
+	margin:0 0px 10px 0px;
+	padding:0;
+}
+/*===============================
+========== TABLE ================
+=================================*/
+.v4ltable
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	margin: 15px;
+	width: 480px;
+	text-align: left;
+	border-collapse: collapse;
+}
+.v4ltable th
+{
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+	background: #b9c9fe;
+	border-top: 2px solid #d3ddff;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+.v4ltable td
+{
+	padding: 8px; 
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid #fff;
+	background: #e8edff;
+}
+.v4ltable tfoot tr td
+{
+	background: #e8edff;
+	font-size: 12px;
+	color: #99c;
+}
+.v4ltable tbody tr:hover td
+{
+	background: #d0dafd;
+	color: #339;
+}
+/*===============================
+======= SOCIAL BUTTON ===========
+=================================*/
+.v4lsocialize{
+	height:42px;
+	width:300px;
+	margin:0 auto;
+}
+#buttonnav {
+	position: relative; 
+	margin: 0 auto;
+	width: 300px; 
+	height: 40px; 
+}
+#buttonnav li {
+	height: 40px; 
+	position: absolute; 
+	
+	background: url(images/social-btn.jpg) 0 0 no-repeat; 
+	display: block; 
+	list-style: none;
+}
+#buttonnav a {
+	height: 40px; 
+	display: block; 
+	text-indent: -2300px;
+/* 	border: solid 1px #fff; */
+}
+/* #buttonnav a:hover {border: solid 1px #000;} */
+#buttonnav #facebook {left: 0px; width:40px;}
+#buttonnav #twitter {left: 50px; background-position: -40px 0; width:40px;}
+#buttonnav #stumbleupon {left: 100px; background-position: -80px 0; width:40px;}
+#buttonnav #gplus {left: 150px; background-position: -120px 0; width: 40px;}
+#buttonnav #paypal {left: 200px; background-position: -160px 0; width: 40px;}
+#buttonnav #rss {left: 250px; background-position: -200px 0; width: 40px;}
+
+#buttonnav #facebook a:hover {background: url(images/social-btn.jpg) 0px -40px no-repeat;}
+#buttonnav #twitter a:hover {background: url(images/social-btn.jpg) -40px -40px no-repeat;}
+#buttonnav #stumbleupon a:hover {background: url(images/social-btn.jpg) -80px -40px no-repeat;}
+#buttonnav #gplus a:hover {background: url(images/social-btn.jpg) -120px -40px no-repeat;}
+#buttonnav #paypal a:hover {background: url(images/social-btn.jpg) -160px -40px no-repeat;}
+#buttonnav #rss a:hover {background: url(images/social-btn.jpg) -200px -40px no-repeat;}
+
+#post-pagination {
+	box-shadow: 0 0 2px #d7d7d7;
+	-webkit-box-shadow: 0 0 2px #d7d7d7; 
+	-moz-box-shadow: 0 0 2px #d7d7d7;
+	border:1px solid #eceeee;
+	background: #fafafa; 
+	padding: 10px 20px; 
+	margin: 15px 0 25px 0;
+	border-radius: 8px;
+}
+#post-pagination a {
+	padding:1px 4px;
+	margin:0px 7px;
+	border:1px solid #1D75CF;
+	background:#1D75CF;
+	color:#FFF;
+	border-radius: 3px;
+}
+#post-pagination a:hover{
+	padding:1px 4px;
+	border:1px solid #54565B;
+	background:#54565B;
+	color:#FFF;
+	border-radius: 3px;
+}
+#post-pagination .current-post-page {
+	padding:1px 4px;
+	border:1px solid #54565B;
+	background:#54565B;
+	color:#FFF;
+	border-radius: 3px;
+}
+/*==============FOLLOWER COUNTER================*/
+.follower_counter {
+ width: 368px;
+ height: 32px;
+ background: url(images/social.png) no-repeat;
+ margin: 0px auto; padding: 0;
+ position: relative;
+ text-decoration:none;
+ list-style-type: none;
+}
+
+.follower_counter li, .follower_text li {margin: 0; padding: 0; list-style: none; position: absolute; top: 0;list-style-type: none;}
+.follower_counter li, .follower_counter a {height: 32px; list-style-type: none;}
+.facebook {left: 30px; width: 32px; text-indent: -2300px;}
+.twitter {left: 122px; width: 32px; text-indent: -2300px;}
+.gplus {left: 214px; width: 32px; text-indent: -2300px;}
+.youtube {left: 306px; width: 32px; text-indent: -2300px;}
+.facebook:hover {background: transparent url(images/social.png) -30px -32px no-repeat; cursor:pointer;}
+.twitter:hover {background: transparent url(images/social.png) -122px -32px no-repeat; cursor:pointer;}
+.gplus:hover {background: transparent url(images/social.png) -214px -32px no-repeat; cursor:pointer;}
+.youtube:hover {background: transparent url(images/social.png) -306px -32px no-repeat; cursor:pointer;}
+.follower_text {
+ width: 368px;
+ height: 50px;
+ margin: 0px auto; padding: 0;
+ position: relative;
+ text-decoration:none;
+ list-style-type: none;
+}
+.follower_text li, .follower_text a {height: 30px; display: block; text-align:center; text-shadow: 0 2px 2px #DDD; color:#034e9d; text-decoration:none;list-style-type: none;}
+.fbval {left: 0; width: 91px;}
+.twval {left: 92px; width: 93px;}
+.gpval {left: 185px; width: 90px;}
+.ytval {left: 274px; width: 101px;}
+/*====================END COUNTER======================*/
+
+.author_social {
+ width: 180px;
+ height: 24px;
+ background: url(images/author_social.png) no-repeat;
+ margin: 8px 0 0 15px; padding: 0;
+ position: relative;
+ text-decoration:none;
+ list-style-type: none;
+ overflow:hidden;
+}
+/*AUTHOR SOCIAL*/
+.author_social li{margin: 0; padding: 0; list-style: none; position: absolute; top: 0;list-style-type: none;}
+.author_social li{height: 24px; list-style-type: none;}
+
+.author_rss {left: 10px; width: 24px; text-indent: -2300px;}
+.author_gplus {left: 44px; width: 24px; text-indent: -2300px;}
+.author_twitter {left: 78px; width: 24px; text-indent: -2300px;}
+.author_fb {left: 112px; width: 24px; text-indent: -2300px;}
+.author_linkedin {left: 146px; width: 24px; text-indent: -2300px;}
+
+.author_rss:hover {background: transparent url(images/author_social.png) -10px -24px no-repeat; cursor:pointer;}
+.author_gplus:hover {background: transparent url(images/author_social.png) -44px -24px no-repeat; cursor:pointer;}
+.author_twitter:hover {background: transparent url(images/author_social.png) -78px -24px no-repeat; cursor:pointer;}
+.author_fb:hover {background: transparent url(images/author_social.png) -112px -24px no-repeat; cursor:pointer;}
+.author_linkedin:hover {background: transparent url(images/author_social.png) -146px -24px no-repeat; cursor:pointer;}

@@ -1,0 +1,8 @@
+sudo dmidecode --type 17 | more
+
+sudo dmidecode | grep -A3 '^System Information'
+
+nproc
+
+lscpu
+

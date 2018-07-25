@@ -1,0 +1,9 @@
+add to local manifest
+
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" name="xanaxdroid/arm-eabi-4.9" remote="bb" revision="sabermod" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.2" name="xanaxdroid/arm-eabi-5.2" remote="bb" revision="sabermod" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="xanaxdroid/arm-linux-androideabi-4.9" remote="bb" revision="sabermod" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.2" name="xanaxdroid/arm-linux-androideabi-5.2" remote="bb" revision="sabermod" />
+
+
+<project name="f100cleveland/saberCore" path="kernel/moto/shamu" remote="gh" revision="saberCore" />

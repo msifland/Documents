@@ -1,0 +1,30 @@
+
+var ftGUID_2760880="34511564EFA790";
+var ftConfID_2760880="7606592";
+var ftParams_2760880="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_agentEnv=0&ft_referrer=http%3A%2F%2Fwww.hacking-tutorial.com%2Fhacking-tutorial%2Fwifi-hacking-cracking-wpa2-password%2F%23sthash.X4nEAdF5.dpbs&cachebuster=486018.23401694035";
+var ftKeyword_2760880="";
+var ftCustom_2760880="";
+var ftSection_2760880="";
+var ftSegment_2760880="g2r,igp,igl,ny7,gip,rn3,qei,rjv,rjw,sio";
+var ftSegmentList_2760880=[{m:'c6147_stv',s:'g2r'},{s:'igp'},{s:'igl'},{s:'ny7'},{s:'gip'},{s:'rn3'},{s:'qei'},{s:'rjv',t:35980000},{s:'rjw',t:35980000},{s:'sio'}];
+var ftRuleMatch_2760880="0";
+var ftTimestamp_2760880="1513634898";
+var ftGeoC2_2760880="us";
+var ftGeoState_2760880="tn";
+var ftGeoCity_2760880="cookeville";
+var ftISP_2760880="charter communications";
+var ftSpeed_2760880="cable";
+var ftDMA_2760880="659";
+var ftLong_2760880="-85.5227";
+var ftLat_2760880="36.1996";
+var ftPostal_2760880="38501";
+var ftTimeZone_2760880="-600";
+var ftMobileCarrier_2760880="";
+var ftImp2760880 = {};
+ftImp2760880.privacy = "x";
+ftImp2760880.guidAge = "188";
+ftImp2760880.impID = "3639F6731EDE79";
+
+
+document.write('<scr'+'ipt src="http://cdn.flashtalking.com/xre/276/2760880/2075289/js/j-2760880-2075289.js" id="ftscript_m2760880" name="ftscript_m2760880"></scr'+'ipt>');
+                    

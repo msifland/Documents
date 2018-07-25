@@ -1,0 +1,26 @@
+Step 1 - Decompressing = DAT (sparse data) -> EXT4 (raw image)
+Download sdat2img from here: https://github.com/xpirt/sdat2img
+Or check the scripts folder to see if you already have it and move it to decompressed rom folder.
+
+We're now using sdat2img binary, the usage is very simple:
+./sdat2img <transfer_list> <system_new_file> <system_ext4>
+- <transfer_list> = input, system.transfer.list from rom zip
+- <system_new_file> = input, system.new.dat from rom zip
+- <system_ext4> = output ext4 raw image file
+and a quick example:
+
+CODE:
+./sdat2img.py system.transfer.list system.new.dat system.img
+
+by running this command you will get as output the file my_new_system.img which is the raw ext4 image.
+
+
+Step 2 - Decompress EXT4 (raw image) -> OUTPUT folder -> Compress EXT4 (raw image)
+Now we need to mount or ext4 raw image into an output folder so we can see apks/jars etc.
+To do this we need to type this command:
+Create a folder called output
+
+CODE:
+sudo mount -t ext4 -o loop system.img output/
+
+As you can see there is a new folder called output which we can edit/modify/delete your files (not able to? see here)

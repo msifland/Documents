@@ -1,0 +1,33 @@
+If you restored your apps from previous arech install these should already be installed. To build any version of Android, you need to install these packages:
+
+Install needed packages:
+	bc bison curl flex gcc gcc-libs gcc-libs-multilib gcc-multilib git gnupg gperf lib32-ncurses lib32-ncurses5-compat-libs lib32-readline lib32-zlib libtinfo libxslt maven ncurses ncurses5-compat-libs perl-switch python2-virtualenv repo rsync schedtool sdl squashfs-tools unzip wxgtk zip zlib
+
+-Java Development Kit
+-Android 5 (Lollipop) can be built with jdk7-openjdk.
+-Setting up the build environment
+-Install the AUR package:
+	pacaur -S --needed repo
+
+-Then:
+	mkdir ~/bin
+	curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+	chmod a+x ~/bin/repo
+
+-Setting up Python
+-We're going to create a python symlink to python2, and place it in /opt/android-build. We'll use this later by updating our path when necessary.
+
+-Code:
+	sudo mkdir /opt/android-build
+	cd /opt/android-build
+	sudo ln -s $(which python2) python
+
+-Then add export PATH in bash or zsh script before building and syncing
+	export PATH="/opt/android-build:$PATH"
+
+-If using zsh, may have to shwitch back to bash to do rom repo init.
+	-Open terminal and type:
+		bash
+		-Then repo init. Switch back to zsh by typing:
+			zsh
+

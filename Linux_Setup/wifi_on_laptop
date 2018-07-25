@@ -1,0 +1,12 @@
+
+-If running on ethernet, in terminal type:
+	sudo systemctl enable dhcpcd
+	sudo systemctl start dhcpcd"
+
+
+
+-If running on wifi, in terminal type:
+	sudo systemctl disable dhcpcd
+	sudo systemctl stop dhcpcd
+	sudo ip link set $(ip link | awk '{print $2}' | grep -i "wl" | sed 's/://') down
+	sudo wifi-menu"

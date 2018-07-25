@@ -1,0 +1,36 @@
+For current brother network printer:
+
+-First make sure cups is installed. Then add user to groups if not already done on install:
+sudo gpasswd -a msifland lp
+sudo gpasswd -a msifland sys
+
+-Enaable and start cups service
+	sudo systemctl enable org.cups.cupsd.service
+	sudo systemctl start org.cups.cupsd.service
+-Open cups
+-Select add printer
+-On righ select share and allow printing from internet. Click add printer on left.
+-Select network printer on top and next.
+-Select the ppd file in /home/Brother Printer  to install driver. The ppd is not the corrct model number but it does work.
+
+-Make sure paper size is correct and click "Set Default Options"
+
+--IF ABOVE DOESN'T WORK TRY FOLLING STEPS:
+-Then enabel and start cups browsing
+systemctl start cups-browsed.service
+systemctl enable cups-browsed.service
+
+-Then go to Brother Printer folder in Home and unzip one at a time and put in /
+
+Openc cups. Go to add printers. On righ select share and allow printing from internet. Click add printer on left.
+
+-Select Internet Protocol Printing(ipp), continue...
+
+-Clear out the prefilled ipp and type http://192.168.2.224 See below...
+
+-Type name of printer and click Share This Printer
+
+-Select the ppd file in /home/Brother Printer  to install driver. The ppd is not the corrct model number but it does work.
+
+-Make sure paper size is correct and click "Set Default Options"
+Brother 9130cw ip - 192.168.2.224

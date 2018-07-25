@@ -1,0 +1,8 @@
+-If clock is wrong do this:
+	-Make sure ntp is installed, if not then:
+		pac ntp
+	-Then in terminal run:
+		sudo ntpdate 0.us.pool.ntp.org
+		sudo systemctl enable ntpd.service
+		sudo systemctl start ntpd.service
+		sudo ntpd -qg

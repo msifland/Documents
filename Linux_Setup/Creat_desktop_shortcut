@@ -1,0 +1,18 @@
+creat empty file on desktop, open with text editor and add:
+
+[Desktop Entry]
+Version=1.0
+Name=Tonido
+GenericName=Web Browser
+Exec=/opt/google/chrome/google-chrome http://192.168.2.3:10001/ui/core/index.html#expl-tabl.
+Terminal=false
+Icon=google-chrome
+Type=Application
+Categories=Network;WebBrowser;Favorites;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito
+
+
+
+change line #5 to the name that you want
+change line # 7 web address to address you want

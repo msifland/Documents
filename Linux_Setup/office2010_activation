@@ -1,0 +1,14 @@
+-Install playonlinux
+	pac playonlinux
+
+-Ater install go to playonlinux>configure, select office 2010 drive, click on>wine version and > change to 1.7.52
+
+-Clicke configure> select 2010 office drive > Miscellaneous > run an .exe on this drive > select the Activator
+
+-In activator app click tab > Addition > type 127.0.0.2 > connect to server > keep this app opened
+
+-Back to playonlinux > install > office > Office 2010 activation > install > next > volume activation kms > type 127.0.0.2 > next > type 1688 > next > yes
+
+-Playonlinux > open and close word 2 times, second time should activate it
+
+-Close all

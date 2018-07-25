@@ -1,0 +1,42 @@
+via termina:
+sudo fdisk -l
+sudo umount /dev/sdb
+sudo mount -f /dev/sdb
+sudo wipefs --all --force /dev/sdb
+sudo mkfs.vfat -n 'MSI_Arch' -I /dev/sdb
+#The | sudo pv -trebI | section shows progress in terminal.
+sudo dd bs=4M if=/copy/iso/path/and/paste/here | sudo pv -trebI | sudo dd of=/dev/sdb $$ sync
+
+OR
+
+download and use imagewriter
+aurget -S imagewriter
+To run imagewriter open with terminal
+
+OR
+
+Use gnome-disks
+Open terminal and type:
+gnome-disks
+
+Select drive on left
+
+Select menu on right
+
+Select Restore Disk Image
+
+Browse to image file(i.e. Downloads/Xubuntu_15.10_amd64.iso) and select it and start
+
+Wait until finish and test.
+
+After this procedure disk becomes locked, can not delete or format or make changes. This is the solution:
+Open Gparted and got to top right drop down and like for device name(should be /dev/sdb)
+
+sudo gdisk /dev/sdb
+o
+(agree to delete partitions)
+
+w
+(agree to write partition table)
+
+then open as root and it's writable
