@@ -15,8 +15,8 @@
 
 -Finally, edit fstab to add an entry for the swap file:
 	kwrite /etc/fstab
-		#Swap /swapfile
-		/swapfile        none        swap        defaults        0 0
+#Swap /swapfile
+/swapfile        none        swap        defaults        0 0
 
 
 -To resize file just follow these steps:
