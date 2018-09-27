@@ -1,7 +1,24 @@
 -To install linux on to a flash drive, simply download the live.iso distro you want, boot into it and insert you flash drive to install to and got through the install process.
 	IMPORTANT: INSTALL GRUB TO /dev/sdX(usb drive), not to /dev/sda(main hard drive)
-Then reboot, should be fine.
-
+-Then reboot to main machine and reinstall grub on usb:
+	sudo apt install grub(2) /dev/sdX
+	sudo grub-install /dev/sdX
+	sudo update-grub /dev/sdX
+	-If no boot and in grub rescue:
+	ls
+		shows: (hd0),(hd0,msdos1)(hd0,msdos2)
+		Pick correct one.
+	set prefix= (hd0,msdos1)/boot/grub
+		If wrong one, error will display.
+	insmod normal
+	normal
+	-Should reboot to OS.
+	-Open terminal and type:
+	lsblk
+		to see what partition to install to.
+	sudo update-grub
+	sudo grub-install /dev/sdX
+	-Reboot to usb.
 
 -To install a grub entry for and live.iso install onto the same drive:
 	-Download live.iso of choice
