@@ -27,6 +27,19 @@
 		sudo subl /etc/grub.d/grub.cfg
 	Add this to the bottom of the file:
 
+---For Debian
+### Customer Entry ###
+exec tail -n +3 $0
+
+menuentry "Debian 9.5 net-install.iso" {
+        insmod ext2
+        set root='(hd0,1)'
+        linux /home/msifland/iso/vmlinuz
+        initrd /home/msifland/iso/initrd.gz
+}
+### End Custom Entry ###
+
+---For Ubuntu
 ### Begin custom entry ###
 exec tail -n +3 $0
 
