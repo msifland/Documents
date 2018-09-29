@@ -22,7 +22,7 @@
 	
 -If not grub rescue
 	-Boot back into live cd, open terminal and type:
-		su
+		sudo su
 	-Mount your normal system partition. X is the drive letter. Y is the partition number:
 	-Substitute the correct partition: sda1, sdb5, etc.
 		sudo mount /dev/sdXY /mnt
