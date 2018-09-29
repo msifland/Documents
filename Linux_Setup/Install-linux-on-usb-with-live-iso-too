@@ -25,14 +25,14 @@
 		sudo su
 	-Mount your normal system partition. X is the drive letter. Y is the partition number:
 	-Substitute the correct partition: sda1, sdb5, etc.
-		sudo mount /dev/sdXY /mnt
-	-Example 1: sudo mount /dev/sda1 /mnt
+		mount /dev/sdXY /mnt
+	-Example 1: mount /dev/sda1 /mnt
 	
 	-Mount the critical virtual filesystems. Run the following as a single command:
-		for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+		for i in /dev /dev/pts /proc /sys /run; do mount -B $i /mnt$i; done
 		
 	-Chroot into your normal system device:
-		sudo chroot /mnt
+		chroot /mnt
 		
 	-Reinstall GRUB 2 (substitute the correct device with sda, sdb, etc. Do not specify a partition number):
 		grub-install /dev/sdX
