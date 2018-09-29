@@ -89,3 +89,44 @@ menuentry "Mate 18.04 Live-ISO" {
 				-Let it generate, it will take a couple minutes.
 			 	-Open /boot/grub/grub.cfg and remove entries not needed. Usually stuff between 30_os_prober. Also make sure that 40_custom entry is there as well, usually toward the bottom.
 		-Then your menu entry should be in the grub menu and should boot to a live cd environment.
+		
+		
+		
+		
+		
+		
+Mount your normal system partition. X is the drive letter. Y is the partition number:
+
+Substitute the correct partition: sda1, sdb5, etc.
+sudo mount /dev/sdXY /mnt
+Example 1: sudo mount /dev/sda1 /mnt
+
+Example 2: sudo mount /dev/md1 /mnt
+
+Only if you have a separate boot partition (where sdXY is the /boot partition designation):
+
+sudo mount /dev/sdXY /mnt/boot
+Example 1: sudo mount /dev/sdb6 /mnt/boot
+
+Example 2: sudo mount /dev/md0 /mnt/boot
+
+Only if (some) of the system partitions are on a software RAID (otherwise skip this step): make sure the output of mdadm --examine --scan agrees with the array definitions in /etc/mdadm/mdadm.conf.
+
+Mount the critical virtual filesystems. Run the following as a single command:
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+Chroot into your normal system device:
+sudo chroot /mnt
+Reinstall GRUB 2 (substitute the correct device with sda, sdb, etc. Do not specify a partition number):
+
+grub-install /dev/sdX
+If the system partitions are on a software RAID install GRUB 2 on all disks in the RAID. Example (software RAID using /dev/sda and /dev/sdb):
+
+grub-install /dev/sda
+grub-install /dev/sdb
+Recreate the GRUB 2 menu file (grub.cfg)
+
+update-grub
+Exit chroot: CTRL-D on keyboard
+
+Reboot.
+sudo reboot
