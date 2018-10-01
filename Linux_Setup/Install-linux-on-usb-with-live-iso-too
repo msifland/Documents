@@ -58,7 +58,7 @@ exec tail -n +3 $0
 menuentry "Debian Live" {
 	set isofile="/home/msifland/iso/debian-live-4.9.0-amd64+nonfree.iso"
         set root='(hd0,msdos1)'
-	loopback loop (hd0,1)$isofile
+		loopback loop (hd0,1)$isofile
         linux (loop)/live/vmlinuz-4.9.0-7-amd64 boot=live iso-scan/filename=$isofile findiso=$isofile
         initrd (loop)/live/initrd-4.9.0-7-amd64
 }
