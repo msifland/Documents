@@ -51,16 +51,45 @@
 		sudo subl /etc/grub.d/grub.cfg
 	Add this to the bottom of the file:
 
----For Debian
+---For Debian Live.iso Live environment only, no install.
 ### Customer Entry ###
 exec tail -n +3 $0
 
-menuentry "Debian Live" {
-	set isofile="/home/msifland/iso/debian-live-4.9.0-amd64+nonfree.iso"
+menuentry "Debian Live(no install)" {
+		set isofile="/home/msifland/iso/debian-live-9.5.0-amd64-mate.iso"
         set root='(hd0,msdos1)'
 		loopback loop (hd0,1)$isofile
         linux (loop)/live/vmlinuz-4.9.0-7-amd64 boot=live iso-scan/filename=$isofile findiso=$isofile
         initrd (loop)/live/initrd-4.9.0-7-amd64
+}
+### End Custom Entry ###
+
+---For Debian installer
+-Download full live image from here(netinstall images do not work):
+	https://www.debian.org/CD/live/
+-Check name and download hd-media initrd.gz and vmlinuz from same name as above from here:
+	http://http.us.debian.org/debian/dists/<<<<<distro>>>>>/main/installer-amd64/current/images/hd-media/
+-Download firmware from: 
+	http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/<<<<<<distro>>>>>>/current/
+-Put all theses files in a folder on USB debian install: /home/msifland/iso/
+-Add the entry below to /boot/grub/grub.cfg for booting.
+-After booting run initial startup and go through steps and do full scan for .iso image.
+-Select correct .iso image in folder listed above.
+-Menu will ask for firmware disk to be inserted at this point.
+-Push alt+f2
+-Mount firmware:
+	mount --bind /hd-media/home/msifland/iso/firmware /media
+-Resume install and should go smoothly from here.
+	
+### Customer Entry ###
+exec tail -n +3 $0
+
+menuentry "Debian Installer From Live.iso" {
+		insmod part_msdos
+		insmod ext2
+		set root='(hd0,msdos1)'
+        linux /home/msifland/iso/vmlinuz
+        initrd /home/msifland/iso/initrd.gz
 }
 ### End Custom Entry ###
 
