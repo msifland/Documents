@@ -77,8 +77,9 @@ menuentry "Debian Live(no install)" {
 -Select correct .iso image in folder listed above.
 -Menu will ask for firmware disk to be inserted at this point.
 -Push alt+f2
--Mount firmware:
-	mount --bind /hd-media/home/msifland/iso/firmware /media
+-Mount firmware. May have to try a couple time with different directories, /media /mnt /firmware, etc.:
+        mkdir firmware
+	mount --bind /hd-media/home/msifland/iso/firmware /firmware
 -Resume install by pressing alt+f1, and should go smoothly from here.
 	
 ### Customer Entry ###
