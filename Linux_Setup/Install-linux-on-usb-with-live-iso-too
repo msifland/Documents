@@ -43,9 +43,9 @@
 	-Exit chroot and Reboot.
 		exit
 		sudo reboot
-
+______________________________________________________________________
 -To install a grub entry for and live.iso install onto the same drive:
-	-Download live.iso of choice
+	-Download live.iso of choice, recommend 'non-free' images as they will have neccesary firmware for wifi and monitors.
 	-Put it into a folder on the main usb linux install /home/msifland/<some_folder>/
 	-Then open this file:
 		sudo subl /etc/grub.d/grub.cfg
@@ -63,16 +63,31 @@ menuentry "Debian Live(no install)" {
         initrd (loop)/live/initrd-4.9.0-7-amd64
 }
 ### End Custom Entry ###
-
+_________________________________________________________________________
 ---For Debian installer
--Download full live image from here(netinstall images do not work):
-	https://www.debian.org/CD/live/
--Check name and download hd-media initrd.gz and vmlinuz from same name as above from here:
+-Download full live image or net install(small cd's or usb sticks.) image from here:
+	https://www.debian.org/distrib
+	-Can NOT use non-free images because of the next hd-media files to download. There is a workaround for using non-free custom below.
+-Check name and version, and download hd-media initrd.gz and vmlinuz from same name as above from here:
 	http://http.us.debian.org/debian/dists/<<<<<distro>>>>>/main/installer-amd64/current/images/hd-media/
 -Download firmware from: 
 	http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/<<<<<<distro>>>>>>/current/
--Put all theses files in a folder on USB debian install: /home/msifland/iso/
--Add the entry below to /boot/grub/grub.cfg for booting.
+-Put the initrd.gz and vmlinuz files in a folder on USB debian install: /home/msifland/iso/
+-Put the firmware files in: /home/msifland/iso/firmware
+-Add the entry below then next set of instructions to /boot/grub/grub.cfg for booting.
+________________________________________________________________________
+----Workaround for non-free firmware custom .iso netinst file------
+-After downloading netinst or live image, extract .iso contents to folder.
+-Add files from firmware folder into the newly extracted iso folder.
+-Run script 'gen-iso' and follow instructions.
+-Or run this command with proper file paths and names:
+	genisoimage -o <ISO_NM.iso> -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V -D <ISO_PTH>
+
+-Rename file if needed and put in folder /home/msifland/iso/<MY_DEB>.iso
+	-This will give you the non-free firmware without having to do the following steps.
+________________________________________________________________________
+-------------------------------------------------------------------------
+----Skip this if using custom iso from step above.
 -After booting run initial startup and go through steps and do full scan for .iso image.
 -Select correct .iso image in folder listed above.
 -Menu will ask for firmware disk to be inserted at this point.
@@ -81,7 +96,8 @@ menuentry "Debian Live(no install)" {
        mkdir firmware
 	mount --bind /hd-media/home/msifland/iso/firmware /firmware
 -Resume install by pressing alt+f1, and should go smoothly from here.
-	
+-------------------------------------------------------------------------
+-Entries to put in grub.cfg
 ### Customer Entry ###
 exec tail -n +3 $0
 
@@ -93,8 +109,12 @@ menuentry "Debian Installer From Live.iso" {
         initrd /home/msifland/iso/initrd.gz
 }
 ### End Custom Entry ###
+_________________________________________________________________________
 
 ---For Ubuntu
+-Just download Ubuntu distro of choice and put it in /home/msifland/iso/<Ubuntu_Distro>.iso
+-Add this to grub.cfg
+
 ### Begin custom entry ###
 exec tail -n +3 $0
 
