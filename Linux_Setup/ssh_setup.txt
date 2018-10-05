@@ -23,7 +23,7 @@
 -Now setup port forwarding on router.
 	-Open wireless router settings in webpage.
 	-Scroll down to port forwarding.
-	-Add new SecureShell, port number that you put in sshd_config file. IP should be that which shows as your Insternal IP. Type this in terminal:
+	-Add new SecureShell, port number that you put in sshd_config file. IP should be that which shows as your Internal IP. Type this in terminal:
 		ifconfig OR ip addr show
 		-Depending if you are on hardline or wireless look for this: inet 192.168.2.10
 		-Use that.
