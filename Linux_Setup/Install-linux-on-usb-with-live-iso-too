@@ -44,6 +44,61 @@
 		exit
 		sudo reboot
 ______________________________________________________________________
+####################################
+----This is examples of a working grub for add multiple iso's on a flashdrive that has a working linux distro on it. This is just the 40_custom file. Below this section are instructions for getting the correct iso's and different formats fro different distros.
+
+-Open this file(if it doesn't exist, then create it and make sure permissions are set to executable):
+	sudo subl /etc/grub.d/40_custom
+	-Insert this into the file:
+
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry "Debian Installer Netinst" {
+	# Format for Debian Live Netinst(Install only)
+	insmod part_msdos
+	insmod ext2
+	set root='(hd0,msdos1)'
+    linux /home/msifland/iso/installer/vmlinuz
+    initrd /home/msifland/iso/installer/initrd.gz
+}
+
+menuentry "Parrot Linux" {
+	# Format for Debian based
+	set isofile="/home/msifland/iso/MY_Parrot-security-4.2.2_amd64.iso"
+	loopback loop $isofile
+	linux (loop)/live/vmlinuz-4.18.0-parrot8-amd64 boot=live findiso=$isofile iso-scan/filename=$isofile
+	initrd (loop)/live/initrd.img-4.18.0-parrot8-amd64
+}
+
+menuentry "Mate 18.10 Live-ISO" {
+	# Format for Ubuntu based
+	set isofile="/home/msifland/iso/ubuntu-mate-18.10-beta-desktop-amd64.iso"
+	loopback loop $isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/casper/initrd
+}
+
+
+		-A few things to make note of here on this entry.
+			1. The title of what you want it to say is the first line in quotes.	
+			2. The second line sets the path of the file you have on your system. It will boot straight from the .iso
+			3. The third line is what mounts the .iso.
+			4. The fourth and fifth lines tells it what to look for inside the .iso file. You may have to open the .iso file to see the file names and make sure the are correct. in peticular the 'vmlinuz' and 'initrd.lz' files.
+
+		-After adding this to the file and saving it, open terminal and run:
+			sudo grub-mkconfig
+				-Let it generate, it will take a couple minutes.
+			 	-Open /boot/grub/grub.cfg and remove entries not needed. Usually stuff between 30_os_prober. Also make sure that 40_custom entry is there as well, usually toward the bottom.
+		-Then your menu entry should be in the grub menu and should boot to a live cd environment.
+_________________________________________________________________________
+--- To disable your usb-system probing other drive for OS's and adding them to you grub menu, add this to /etc/default/grub:
+	# Uncomment to enable probing other drives
+	GRUB_DISABLE_OS_PROBER=true
+_________________________________________________________________________
 -To install a grub entry for and live.iso install onto the same drive:
 	-Download live.iso of choice, recommend 'non-free' images as they will have neccesary firmware for wifi and monitors.
 	-Put it into a folder on the main usb linux install /home/msifland/<some_folder>/
@@ -57,7 +112,7 @@ exec tail -n +3 $0
 
 menuentry "Debian Live(no install)" {
 		set isofile="/home/msifland/iso/debian-live-9.5.0-amd64-mate.iso"
-        set root='(hd0,msdos1)'
+        # Not sure this line is needed here: set root='(hd0,msdos1)'
 		loopback loop (hd0,1)$isofile
         linux (loop)/live/vmlinuz-4.9.0-7-amd64 boot=live iso-scan/filename=$isofile findiso=$isofile
         initrd (loop)/live/initrd-4.9.0-7-amd64
@@ -135,32 +190,3 @@ menuentry "Mate 18.04 Live-ISO" {
 -To make drive last longer disable journal. Boot to a linux machine, plug in the usb drive you have installed linux on and type this in terminal, obviously changing the 'X' and 'Y' to what it should be:
 		tune2fs -O ^has_journal /dev/sdXY
 
-####################################
--Alternate method, not as reliable.
-
-	-Then open this file(if it doesn't exist, then create it and make sure permissions are set to executable):
-		sudo subl /etc/grub.d/40_custom
-		-Insert this into the file:
-
-#!/bin/sh
-exec tail -n +3 $0
-# This file provides an easy way to add custom menu entries.  Simply type the menu entries you want to add after this comment.  Be careful not to change the 'exec tail' line above.
-
-menuentry "Mate 18.04 Live-ISO" {
-	set isofile="/home/msifland/mate_iso/ubuntu-mate-18.04-desktop-amd64.iso"
-	loopback loop (hd0,1)$isofile
-	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
-	initrd (loop)/casper/initrd.lz
-}
-
-		-A few things to make note of here on this entry.
-			1. The title of what you want it to say is the first line in quotes.	
-			2. The second line sets the path of the file you have on your system. It will boot straight from the .iso
-			3. The third line is what mounts the .iso.
-			4. The fourth and fifth lines tells it what to look for inside the .iso file. You may have to open the .iso file to see the file names and make sure the are correct. in peticular the 'vmlinuz' and 'initrd.lz' files.
-
-		-After adding this to the file and saving it, open terminal and run:
-			sudo grub-mkconfig
-				-Let it generate, it will take a couple minutes.
-			 	-Open /boot/grub/grub.cfg and remove entries not needed. Usually stuff between 30_os_prober. Also make sure that 40_custom entry is there as well, usually toward the bottom.
-		-Then your menu entry should be in the grub menu and should boot to a live cd environment.
