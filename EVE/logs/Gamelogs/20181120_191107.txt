@@ -1,0 +1,5 @@
+------------------------------------------------------------
+  Gamelog
+  Session Started: 2018.11.20 19:11:07
+------------------------------------------------------------
+[ 2018.11.20 19:17:31 ] (notify) Clothing from the following categories must be equipped to your character before continuing: Bottom, Top, Feet

@@ -1,0 +1,83 @@
+------------------------------------------------------------
+  Gamelog
+  Listener: Q Qi
+  Session Started: 2018.11.20 19:20:40
+------------------------------------------------------------
+[ 2018.11.20 19:25:55 ] (notify) Ship stopping
+[ 2018.11.20 19:25:59 ] (notify) Ship stopping
+[ 2018.11.20 19:26:07 ] (combat) <color=0xffcc0000><b>0</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Hits
+[ 2018.11.20 19:26:09 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:26:16 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:26:24 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:26:33 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:26:42 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:26:50 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:26:57 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:27:05 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:27:13 ] (notify) Ship stopping
+[ 2018.11.20 19:27:13 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:27:20 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:27:28 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:27:37 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:27:45 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:27:53 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:02 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:09 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:19 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:25 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:33 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:41 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:49 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:28:57 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:29:06 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:29:13 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:29:21 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:29:29 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:29:37 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:29:45 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:29:53 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:01 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:11 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:18 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:26 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:34 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:42 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:50 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:30:57 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:31:06 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:31:14 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:31:21 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:31:30 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:31:38 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:31:46 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:31:54 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:02 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:10 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:17 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:26 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:34 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:42 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:50 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:32:58 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:33:06 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:33:14 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:33:22 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:33:30 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:33:39 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:33:46 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:33:54 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:02 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:11 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:19 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:27 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:34 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:42 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:50 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:34:58 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:35:06 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:35:15 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:35:22 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:35:27 ] (question) Are you sure you want to log off?
+[ 2018.11.20 19:35:31 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:35:39 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits
+[ 2018.11.20 19:35:46 ] (combat) <color=0xffcc0000><b>5</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Circadian Seeker</b><font size=10><color=0x77ffffff> - Inferno Light Missile - Hits

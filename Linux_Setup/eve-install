@@ -1,0 +1,14 @@
+-Install wine wine32
+	sudo apt install wine wine32 winetricks winbind msttcorefonts
+	WINEPREFIX=~/.wine32 WINEARCH=win32 wine wineboot
+	sudo WINEPREFIX=~/.wine32 WINEARCH=win32 winbindd
+	WINEPREFIX=~/.wine32 WINEARCH=win32 winetricks corefonts d3dx9_36 vcrun2005 vcrun2008 vcrun2010
+	
+-Download eve installer 
+	cd Downloads
+	curl http://binaries.eveonline.com/EveLauncher-1381807.exe -o installer.exe
+	WINEPREFIX=~/.wine32 WINEARCH=win32 wine installer.exe
+		-Run through install with no changes and uncheck "Run", close.
+	WINEPREFIX=~/.wine32 WINEARCH=win32 winecfg
+		-Change to WindowsXP
+	cd ~/.wine32/drive_c/EVE/ && WINEPREFIX=~/.wine32 WINEARCH=win32 wine eve.exe
