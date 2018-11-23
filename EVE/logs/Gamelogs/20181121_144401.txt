@@ -1,6 +1,0 @@
-------------------------------------------------------------
-  Gamelog
-  Session Started: 2018.11.21 14:44:01
-------------------------------------------------------------
-[ 2018.11.21 15:08:55 ] (info) You must be docked in a station or a structure to redeem items.
-[ 2018.11.21 15:08:59 ] (info) You must be docked in a station or a structure to redeem items.
