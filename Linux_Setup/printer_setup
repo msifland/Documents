@@ -7,8 +7,7 @@ sudo gpasswd -a msifland sys
 -Enaable and start cups service
 	sudo systemctl enable org.cups.cupsd.service
 	sudo systemctl start org.cups.cupsd.service
--Open cups
--Select add printer
+-Open cups in webpage: http://localhost:631/
 -On righ select share and allow printing from internet. Click add printer on left.
 -Select network printer on top and next.
 -Select the ppd file in /home/Brother Printer  to install driver. The ppd is not the corrct model number but it does work.
