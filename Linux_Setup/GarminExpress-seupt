@@ -1,0 +1,23 @@
+Linux Package Requirements:
+wine-devel Note:3.19 or higher
+winetricks
+Installation Steps
+First we start by creating a wineprefix and installing our prerequisites from terminal:
+	WINEARCH=win32 WINEPREFIX=/home/$USER/GarminExpress winetricks dotnet452 vcrun2010 corefonts
+	WINEARCH=win32 WINEPREFIX=/home/$USER/GarminExpress winetricks win7
+		Note: You will be prompted during the setup for .NET installation just hit next and finish. Also, I like to seperate win7 after the prerequisites are setup to make sure the wineprefix runs in Windows 7 mode.
+
+With that out of the way we need to download and install our GarminExpress.exe Setup executable. I downloaded mine from https://www.garmin.com/en-US/software/express
+
+Run the GarminExpress.exe file in our wine prefix:
+	WINEPREFIX=/home/$USER/GarminExpress wine explorer /desktop=garmin,1366x768 /home/$USER/Downloads/GarminExpress.exe
+		Note: If you downloaded the GarminExpress.exe to another location replace it above
+
+Modify your shortcut to be the following command:
+	WINEPREFIX=/home/msifland/GarminExpress wine explorer /desktop=garmin,1366x768 '/home/msifland/GarminExpress/drive_c/Program Files/Garmin/Express/express.exe'
+		Upon Launch you should see this screen which should recognize your Garmin device
+
+Garmin Express on Linux
+Wish all this done you will be able to launch Garmin Express on Linux.
+
+Leave any Questions and Comments below and I will get back to you. I regularly publish on YouTube and christitus.com so if you’d like to see more videos and articles click the subscribe button in the top right.
