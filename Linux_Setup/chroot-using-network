@@ -1,0 +1,13 @@
+#/bin/bash
+
+sudo mount /dev/sda2 /mnt
+sudo mount /dev/sda1 /mnt/home
+sudo mount /dev/sda3 /mnt/boot/efi
+
+for i in /dev /dev/pts /proc /sys; do sudo mount -B $i /mnt$i; done
+
+sudo cp /etc/resolv.conf /mnt/etc/
+
+modprobe efivars
+
+sudo chroot /mnt
