@@ -1,0 +1,6 @@
+boot to live cd
+
+open terminal and copy and paste:
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+
+sudo apt install boot-repair
