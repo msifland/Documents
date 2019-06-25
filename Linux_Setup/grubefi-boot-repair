@@ -1,0 +1,19 @@
+boot to live cd
+
+open terminal and copy and paste:
+	sudo add-apt-repository ppa:yannubuntu/boot-repair
+
+	sudo apt install boot-repair
+
+The above will do it via GUi tool.
+
+
+Manual via terminal:
+	lsblk
+		Shows partitions
+	efibootmgr
+		Shows Bootxxxx
+
+	efibootmgr -b <Bootxxxx> -B
+	mkfs.vfat -F32 /dev/sdXY
+	grub-install /dev/sda --target=x86_64-efi

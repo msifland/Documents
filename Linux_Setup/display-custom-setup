@@ -1,0 +1,27 @@
+Create a new resolution. Go to settings and check the best aspect ration ex. 16:9
+Determin how wide you want the new display and calculate. ex. 900(ht) / 1600(width), multiply new width by that number.
+
+Open terminal:
+	cvt 1750 985 #creates new display size
+
+	xrandr --newmode <copied from line generated from previous> #ex. xrandr --newmode "1752x985_60.00"  142.50  1752 1856 2040 2328  985 988 998 1022 -hsync +vsync"
+
+	xrandr #gets display number at top of section. ex. eDP-1-1
+	
+	xrandr --addmode <display num> <scr-res> # Info in brackets is from previous commands. ex. xrandr --addmode eDP-1-1 1752x985_60.00
+
+Now add the last two commands to .xprofile:
+	touch .xprofile
+	echo 'xrandr --newmode "1752x985_60.00"  142.50  1752 1856 2040 2328  985 988 998 1022 -hsync +vsync' >> .xprofile
+	echo 'xrandr --addmode eDP-1-1 1752x985_60.00' >> .xprofile
+
+Or a single command copy and paste in terminal:
+RES="1750 985" && \
+DISP=$(xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/") && \
+MODELINE=$(cvt $(echo $RES) | grep -e "Modeline [^(]" | sed -r 's/.*Modeline (.*)/\1/') && \
+MODERES=$(echo $MODELINE | grep -o -P '(?<=").*(?=")') && \
+cat > ~/.xprofile << _EOF
+#!/bin/sh
+xrandr --newmode $MODELINE
+xrandr --addmode $DISP $MODERES
+_EOF
