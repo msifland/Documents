@@ -16,7 +16,7 @@ Now add the last two commands to .xprofile:
 	echo 'xrandr --addmode eDP-1-1 1752x985_60.00' >> .xprofile
 
 Or a single command copy and paste in terminal:
-RES="1752 985" && \
+RES="1720 980" && \
 DISP=$(xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/") && \
 MODELINE=$(cvt $(echo $RES) | grep -e "Modeline [^(]" | sed -r 's/.*Modeline (.*)/\1/') && \
 MODERES=$(echo $MODELINE | grep -o -P '(?<=").*(?=")') && \
