@@ -159,6 +159,14 @@ exec tail -n +3 $0
 menuentry "Debian Installer From Live.iso" {
 		insmod part_msdos
 		insmod ext2
+		set root='(hd0,4)'
+        linux /home/msifland/iso/vmlinuz
+        initrd /home/msifland/iso/initrd.gz
+}
+
+menuentry "Debian Installer From Live.iso" {
+		insmod part_msdos
+		insmod ext2
 		set root='(hd0,msdos1)'
         linux /home/msifland/iso/vmlinuz
         initrd /home/msifland/iso/initrd.gz
