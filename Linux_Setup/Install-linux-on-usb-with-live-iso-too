@@ -66,6 +66,15 @@ menuentry "Debian Installer Netinst" {
     initrd /home/msifland/iso/installer/initrd.gz
 }
 
+menuentry "Kali-Linux-7-8-19" {
+	# Format for Ubuntu based
+	set root='(hd0,4)'
+	set isofile="/home/msifland/iso/kali-linux-2019.2-amd64.iso"
+	loopback loop $isofile
+	linux (loop)/live/vmlinuz-4.19.0-kali4-amd64 boot=live findiso=$isofile iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/live/initrd.img-4.19.0-kali4-amd64
+}
+
 menuentry "Parrot Linux" {
 	# Format for Debian based
 	set isofile="/home/msifland/iso/MY_Parrot-security-4.2.2_amd64.iso"
