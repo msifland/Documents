@@ -122,7 +122,7 @@ exec tail -n +3 $0
 menuentry "Debian Live(no install)" {
 		set isofile="/home/msifland/iso/debian-live-9.5.0-amd64-mate.iso"
         # Not sure this line is needed here: set root='(hd0,msdos1)'
-		loopback loop (hd0,1)$isofile
+		loopback loop (hd0,msdos1)$isofile
         linux (loop)/live/vmlinuz-4.9.0-7-amd64 boot=live iso-scan/filename=$isofile findiso=$isofile
         initrd (loop)/live/initrd-4.9.0-7-amd64
 }
@@ -168,7 +168,7 @@ exec tail -n +3 $0
 menuentry "Debian Installer From Live.iso" {
 		insmod part_msdos
 		insmod ext2
-		set root='(hd0,4)'
+		set root='(hd0,msdos4)'
         linux /home/msifland/iso/vmlinuz
         initrd /home/msifland/iso/initrd.gz
 }
@@ -192,7 +192,7 @@ exec tail -n +3 $0
 
 menuentry "Mate 18.04 Live-ISO" {
 	set isofile="/home/msifland/mate_iso/ubuntu-mate-18.04-desktop-amd64.iso"
-	loopback loop (hd0,1)$isofile
+	loopback loop (hd0,msdos1)$isofile
 	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
 	initrd (loop)/casper/initrd.lz
 }
