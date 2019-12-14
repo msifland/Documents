@@ -4,20 +4,21 @@
 	sudo apt install grub(2) /dev/sdX
 	sudo grub-install /dev/sdX
 	sudo update-grub /dev/sdX
+
 	-If no boot and in grub rescue:
-	ls
-		shows: (hd0),(hd0,msdos1)(hd0,msdos2)
-		Pick correct one.
-	set prefix=(hd0,msdos1)/boot/grub
-		If wrong one, error will display.
-	insmod normal
-	normal
+		ls
+			shows: (hd0),(hd0,msdos1)(hd0,msdos2)
+			Pick correct one.
+		set prefix=(hd0,msdos1)/boot/grub
+			If wrong one, error will display.
+		insmod normal
+		normal
 	-Should reboot to OS.
 	-Open terminal and type:
-	lsblk
-		to see what partition to install to.
-	sudo update-grub
-	sudo grub-install /dev/sdX
+		lsblk
+			to see what partition to install to.
+		sudo update-grub
+		sudo grub-install /dev/sdX
 	-Reboot to usb.
 	
 -If not grub rescue
