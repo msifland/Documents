@@ -44,6 +44,16 @@
 	-Exit chroot and Reboot.
 		exit
 		sudo reboot
+
+	-After rebooting firware files may need to be installed. 
+		-Download firmware from: 
+			http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/<<<<<<distro>>>>>>/current/
+		-Download all three packages from here:
+			https://packages.debian.org/search?keywords=firmware-linux
+		-Put all those files into one folder and install them.
+			cd <directory with files>
+			sudo dpkg -i *.deb
+	-Keep these file for reinstalling when running usb-linux on different systems and reinstalling these get you the drivers you need for each system.
 ______________________________________________________________________
 ####################################
 ----This is examples of a working grub for add multiple iso's on a flashdrive that has a working linux distro on it. This is just the 40_custom file. Below this section are instructions for getting the correct iso's and different formats fro different distros.
@@ -137,8 +147,11 @@ _________________________________________________________________________
 	http://http.us.debian.org/debian/dists/<<<<<distro>>>>>/main/installer-amd64/current/images/hd-media/
 -Download firmware from: 
 	http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/<<<<<<distro>>>>>>/current/
+-Download all three packages from here:
+	https://packages.debian.org/search?keywords=firmware-linux
 -Put the initrd.gz and vmlinuz files in a folder on USB debian install: /home/msifland/iso/
 -Put the firmware files in: /home/msifland/iso/firmware
+-Put the other firmware files in /home/msifland/iso/firmware(firmware-linux, firmware-linux-free, firmware-linux-nonfree)
 -Add the entry below then next set of instructions to /boot/grub/grub.cfg for booting.
 ________________________________________________________________________
 ----Workaround for non-free firmware custom .iso netinst file------
