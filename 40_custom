@@ -1,0 +1,27 @@
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry "Debian Installer From Live.iso" {
+		insmod part_msdos
+		insmod ext2
+		set root='(hd0,4)'
+        linux /home/msifland/iso/debian/vmlinuz
+        initrd /home/msifland/iso/debian/initrd.gz
+}
+
+menuentry "Mate 18.04 Live-ISO" {
+	set isofile="/home/msifland/ubuntu-mate-19.04-desktop-amd64.iso"
+	loopback loop (hd0,4)$isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/casper/initrd
+}
+
+menuentry "Kali Linux" {
+	set isofile="/home/msifland/iso/kali-linux-2019.2-amd64.iso"
+	loopback loop (hd0,4)$isofile
+	linux (loop)/live/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/live/initrd.img
+}
