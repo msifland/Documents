@@ -175,7 +175,7 @@ ________________________________________________________________________
 	mount --bind /hd-media/home/msifland/iso/firmware /firmware
 -Resume install by pressing alt+f1, and should go smoothly from here.
 -------------------------------------------------------------------------
--Entries to put in grub.cfg
+-Entries to put in grub.cfg or if /etc/grub.d/40_custom(41_custom)
 ### Customer Entry ###
 exec tail -n +3 $0
 
@@ -199,7 +199,7 @@ _________________________________________________________________________
 
 ---For Ubuntu
 -Just download Ubuntu distro of choice and put it in /home/msifland/iso/<Ubuntu_Distro>.iso
--Add this to grub.cfg
+-Add this to grub.cfg or if /etc/grub.d/40_custom(41_custom)
 
 ### Begin custom entry ###
 exec tail -n +3 $0
