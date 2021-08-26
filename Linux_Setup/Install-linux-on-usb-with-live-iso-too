@@ -248,3 +248,5 @@ menuentry "Mate 18.10 Live-ISO" {
 	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
 	initrd (loop)/casper/initrd
 }
+
+
