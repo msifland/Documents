@@ -147,6 +147,7 @@ _________________________________________________________________________
 	http://http.us.debian.org/debian/dists/<<<<<distro>>>>>/main/installer-amd64/current/images/hd-media/
 -Download firmware from: 
 	http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/<<<<<<distro>>>>>>/current/
+	-See below method to install firware files into .iso
 -Download all three packages from here:
 	https://packages.debian.org/search?keywords=firmware-linux
 -Put the initrd.gz and vmlinuz files in a folder on USB debian install: /home/msifland/iso/
@@ -154,7 +155,7 @@ _________________________________________________________________________
 -Put the other firmware files in /home/msifland/iso/firmware(firmware-linux, firmware-linux-free, firmware-linux-nonfree)
 -Add the entry below then next set of instructions to /boot/grub/grub.cfg for booting.
 ________________________________________________________________________
-----Workaround for non-free firmware custom .iso netinst file------
+----(Preferred method for firmware files) for non-free firmware custom .iso netinst file------
 -After downloading netinst or live image, extract .iso contents to folder.
 -Add files from firmware folder into the newly extracted iso folder.
 -Run script 'gen-iso' and follow instructions.
@@ -221,3 +222,29 @@ menuentry "Mate 18.04 Live-ISO" {
 -To make drive last longer disable journal. Boot to a linux machine, plug in the usb drive you have installed linux on and type this in terminal, obviously changing the 'X' and 'Y' to what it should be:
 		tune2fs -O ^has_journal /dev/sdXY
 
+
+Other distros:
+menuentry "Kali-Linux-7-8-19" {
+	# Format for Ubuntu based
+	set root='(hd0,4)'
+	set isofile="/home/msifland/iso/kali-linux-2019.2-amd64.iso"
+	loopback loop $isofile
+	linux (loop)/live/vmlinuz-4.19.0-kali4-amd64 boot=live findiso=$isofile iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/live/initrd.img-4.19.0-kali4-amd64
+}
+
+menuentry "Parrot Linux" {
+	# Format for Debian based
+	set isofile="/home/msifland/iso/MY_Parrot-security-4.2.2_amd64.iso"
+	loopback loop $isofile
+	linux (loop)/live/vmlinuz-4.18.0-parrot8-amd64 boot=live findiso=$isofile iso-scan/filename=$isofile
+	initrd (loop)/live/initrd.img-4.18.0-parrot8-amd64
+}
+
+menuentry "Mate 18.10 Live-ISO" {
+	# Format for Ubuntu based
+	set isofile="/home/msifland/iso/ubuntu-mate-18.10-beta-desktop-amd64.iso"
+	loopback loop $isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/casper/initrd
+}
