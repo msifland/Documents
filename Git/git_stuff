@@ -18,7 +18,7 @@ First go to bitbucker or github and create your repository, make sure it is not 
 
 # Add the files in your new local repository. This stages them for the first commit.
 # Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'.
-	git add .
+	git add --all
 
 
 # Commit the files that you've staged in your local repository.
@@ -45,7 +45,7 @@ First go to bitbucker or github and create your repository, make sure it is not 
 	git init
 	git add --all
 	git commit -m 'First commit'
-	git remote add origin {URL}
+	git remote add origin {URL}.git
 	git remote -v
 	git push -u origin master
 
