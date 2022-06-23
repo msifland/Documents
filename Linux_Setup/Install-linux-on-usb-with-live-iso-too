@@ -184,8 +184,8 @@ menuentry "Debian Installer From Live.iso" {
 		insmod part_msdos
 		insmod ext2
 		set root='(hd0,msdos4)'
-        linux /home/msifland/iso/vmlinuz
-        initrd /home/msifland/iso/initrd.gz
+        linux /home/msifland/iso/debian/vmlinuz
+        initrd /home/msifland/iso/debian/initrd.gz
 }
 
 menuentry "Debian Installer From Live.iso" {
@@ -224,25 +224,27 @@ menuentry "Mate 18.04 Live-ISO" {
 
 
 Other distros:
+
+# Format for Ubuntu based
 menuentry "Kali-Linux-7-8-19" {
-	# Format for Ubuntu based
-	set root='(hd0,4)'
+	set root='(hd0,msdos4)'
 	set isofile="/home/msifland/iso/kali-linux-2019.2-amd64.iso"
 	loopback loop $isofile
 	linux (loop)/live/vmlinuz-4.19.0-kali4-amd64 boot=live findiso=$isofile iso-scan/filename=$isofile noprompt noeject
 	initrd (loop)/live/initrd.img-4.19.0-kali4-amd64
 }
 
+# Format for Debian based
 menuentry "Parrot Linux" {
-	# Format for Debian based
 	set isofile="/home/msifland/iso/MY_Parrot-security-4.2.2_amd64.iso"
 	loopback loop $isofile
 	linux (loop)/live/vmlinuz-4.18.0-parrot8-amd64 boot=live findiso=$isofile iso-scan/filename=$isofile
 	initrd (loop)/live/initrd.img-4.18.0-parrot8-amd64
 }
 
+# Format for Ubuntu based
 menuentry "Mate 18.10 Live-ISO" {
-	# Format for Ubuntu based
+	set root='(hd0,4)'
 	set isofile="/home/msifland/iso/ubuntu-mate-18.10-beta-desktop-amd64.iso"
 	loopback loop $isofile
 	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
