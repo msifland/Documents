@@ -1,0 +1,16 @@
+Add this to your /etc/apt/sources.list:
+###Kali linux repos(for hacking tools)
+deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main non-free contrib
+deb-src [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main non-free contrib
+
+Now install the key, which is not the normal way of installing keys
+	-open terminal
+	-navigate to Downloads
+		cd Downloads
+	-Download keyring
+		wget http://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2022.1_all.deb
+			(This could be different, open the website first all look for the name of the file)
+	-Install the keyring
+		sudo dpkg -i kali-archive-keyring_2022.1_all.deb(or whatever the name of the file is)
+	-Update repos
+		sudo apt update
