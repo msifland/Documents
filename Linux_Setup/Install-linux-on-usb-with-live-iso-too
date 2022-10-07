@@ -5,7 +5,7 @@
 	sudo grub-install /dev/sdX
 	sudo update-grub /dev/sdX
 
-	-If no boot and in grub rescue:
+	-If not, boot and in grub rescue:
 		ls
 			shows: (hd0),(hd0,msdos1)(hd0,msdos2)
 			Pick correct one.
@@ -21,7 +21,7 @@
 		sudo grub-install /dev/sdX
 	-Reboot to usb.
 	
--If not grub rescue
+-If not, grub rescue
 	-Boot back into live cd, open terminal and type:
 		sudo su
 	-Mount your normal system partition. X is the drive letter. Y is the partition number:
@@ -115,7 +115,7 @@ menuentry "Mate 18.10 Live-ISO" {
 			 	-Open /boot/grub/grub.cfg and remove entries not needed. Usually stuff between 30_os_prober. Also make sure that 40_custom entry is there as well, usually toward the bottom.
 		-Then your menu entry should be in the grub menu and should boot to a live cd environment.
 _________________________________________________________________________
---- To disable your usb-system probing other drive for OS's and adding them to you grub menu, add this to /etc/default/grub:
+--- To disable your usb-system probing other drive for OS's and adding them to your grub menu, add this to /etc/default/grub:
 	# Uncomment to enable probing other drives
 	GRUB_DISABLE_OS_PROBER=true
 _________________________________________________________________________
