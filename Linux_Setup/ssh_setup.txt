@@ -8,6 +8,7 @@
 	-Uncommnet Port 22 line, and change port number. Set below 1024 for securest ports. Less secure ports are from 60,000 to 61,000. To find a port that isn't being used, open terminal and type:
 		netstat -ltu
 		-Pick a port that is not on this list.
+	Port 314
 
 	-Uncomment line: PermitRootLogin prohibit-password. Make sure all other lines in this section are commented out.
 	-If you want x11 forwaring, then uncomment: X11Forwarding no, and change "no" to "yes"
@@ -28,7 +29,7 @@
 		-Depending if you are on hardline or wireless look for this: inet 192.168.2.10
 		-Use that.
 
--If you have a firewall, then set up rules to allow ssh on the above port you've chosen.
+-If you have a firewall, then allow ports you've chosen and ssh services. On firewall-config app click runtime dropdown to permanent.
 
 -Once you have set up puTTy on windows, also download xming. Open xming-lauch and got through steps leave everything as default and save configuration.
 -In putty, you have to go to SSH/X11 and check the  box to allow x11 forwarding. Leave all other fields blank. If not working you can try typing "localhost:0.0" in "X display location" field.
