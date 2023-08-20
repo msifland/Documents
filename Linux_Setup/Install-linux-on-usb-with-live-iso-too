@@ -56,7 +56,7 @@
 	-Keep these file for reinstalling when running usb-linux on different systems and reinstalling these get you the drivers you need for each system.
 ______________________________________________________________________
 ####################################
-----This is examples of a working grub for add multiple iso's on a flashdrive that has a working linux distro on it. This is just the 40_custom file. Below this section are instructions for getting the correct iso's and different formats fro different distros.
+----This is examples of a working grub for adding multiple iso's on a flashdrive that has a working linux distro on it. This is just the 40_custom file. Below this section are instructions for getting the correct iso's and different formats fro different distros.
 
 -Open this file(if it doesn't exist, then create it and make sure permissions are set to executable):
 	sudo subl /etc/grub.d/40_custom
