@@ -1,0 +1,12 @@
+When keys are not there during sudo apt update.
+
+Terminal command:
+gpg --keyserver pgp.mit.edu --recv-keys 784985984375925 656446041640065
+^^'pgp.mit.edu' is a keyserver site. If it doesn't find the key you can get on google and lookup different server site, i.e. keys.openpgp.org, kerserver.ubuntu.com, etc.
+
+Open /etc/apt/sources.list and refernce apt update error web links with sources.list web links and find gpg file name, .e.g /usr/share/keyrings/debian-archive-keyring.gpg
+
+Terminal command:
+gpg --output debian-security-archive-keyring.gpg --export 784985984375925 656446041640065
+sudo mv debian-security-archive-keyring.gpg /usr/share/keyrings/
+^^Above commands export the keyring(s) to a correctly named file then moves it to the correct directory. NOTE: the same keys my need to be added to multiple files, i.e. debian.archive.keyring.gpg and debian-security-archvie-keyring.gpg. The above steps should be done separately for each file to be added to. There may be multiple keys to be added to each file, separate keys with a space all in one command.
