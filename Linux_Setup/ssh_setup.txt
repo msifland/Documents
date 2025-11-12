@@ -10,6 +10,17 @@
 		-Pick a port that is not on this list.
 	Port 22
 	Port 314
+	Port 315
+	Port 316
+	Port 31400
+	Port 31401
+	Port 31402
+	Port 880
+	Port 881
+	Port 882
+	Port 60314
+	Port 60315
+	Port 60316
 
 	-Uncomment line: PermitRootLogin prohibit-password. Make sure all other lines in this section are commented out.
 	-If you want x11 forwaring, then uncomment: X11Forwarding no, and change "no" to "yes"
