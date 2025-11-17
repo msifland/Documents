@@ -1,0 +1,30 @@
+Copy Debian live iso to usb /dev/sdX# /home/msifland/iso/MSI_live/
+Open .iso and copy the /live/initrd.img, /live/vmlinuz, and /install initrd.gz to above listed folder
+	-NOTE: initrd.img is for live and initrd.gz is for installer, vmlinuz should be for both.
+	-There could also be initrd adn vmlinuz with name and numbers after them, those are okay to use as well, but you have to put those letters and numbers in the grub entries below.
+	-For the entries below you have have to get the UUID of the directory with the iso files in it. This is more stable than using the old way of (hd0,msdos4).
+	-To get the UUID, open terminal and type:
+		lsblk -fs
+
+Add to /etc/grub.d/40_custom
+
+menuentry "Debian MY_live-build_11-15-25" {
+	# Format for Debian
+	search --no-floppy --fs-uuid --set=root 7f895ba6-f644-4750-a70a-0ec30ddaea21
+	set isofile="/iso/MSI_live/MSI_live-image-amd64.hybrid.iso"
+	search --set -f $isofile
+	loopback loop $isofile
+	linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/7f895ba6-f644-4750-a70a-0ec30ddaea21/$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago quickreboot
+	initrd (loop)/live/initrd.img
+}
+
+menuentry "Ubuntu-Mate 21.04 Live-ISO" {
+	# Format for Ubuntu based
+	search --no-floppy --fs-uuid --set=root 7f895ba6-f644-4750-a70a-0ec30ddaea21
+	set isofile="/iso/Ubuntu-Mate/ubuntu-mate-21.04-desktop-amd64.iso"
+	loopback loop $isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/casper/initrd
+}
+
+Run sudo update-grub
