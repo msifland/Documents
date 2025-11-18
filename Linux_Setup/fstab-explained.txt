@@ -1,0 +1,18 @@
+Field  /  Description  /  Example
+1. File System	The storage device, partition, or volume to be mounted. This can be a device name (e.g., /dev/sda1), a UUID, or a label.	UUID=a1b2c3d4-e5f6-7890-1234-567890abcdef
+2. Mount Point	The directory where the file system will be mounted. This directory must exist before mounting.	/home
+3. File System Type	The type of the file system (e.g., ext4, ntfs, swap).	ext4
+4. Options	Mount options, which control how the file system is mounted (e.g., defaults, ro for read-only, noatime for performance).	defaults,noatime
+5. Dump	Used by the dump utility to specify backup frequency. 0 means "do not dump".	0
+6. Pass	Determines the order in which fsck (file system check) runs at boot. 0 means "do not check." 1 is typically for the root file system, and 2 is for other file systems to be checked after the root.	1
+
+
+Example fstab:
+
+UUID=38f3a1e0-4c9e-4341-8166-a278cf4902f8     /       ext4    errors=remount-ro 0       1
+
+UUID=f417d30a-7c2a-4971-bfde-78d9f78e9699     /home   ext4    defaults        0       2
+
+UUID=287b1c7d-bcb9-4f64-96e0-6a5530c42ea7     /boot   ext4    defaults    0       2
+
+/dev/sr0                                      /media/cdrom0   udf,iso9660 user,noauto     0       0
