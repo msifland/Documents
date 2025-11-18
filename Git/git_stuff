@@ -45,9 +45,10 @@ First go to bitbucker or github and create your repository, make sure it is not 
 	git init
 	git add --all
 	git commit -m 'First commit'
+	git branch -m master OR any other name you like
 	git remote add origin {URL}.git
 	git remote -v
-	git push -u origin master
+	git push -u origin master (must match branch above)
 
 
 # Ater making changes
