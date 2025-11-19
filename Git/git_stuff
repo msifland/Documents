@@ -31,6 +31,10 @@ First go to bitbucker or github and create your repository, make sure it is not 
 	git remote add origin {URL}.git
 
 
+# Names the main branch
+	git branch -m master OR any other name you like(e.g. main, reg, mine)
+	
+
 # Sets the new remote
 # Verifies the new remote URL
 	git remote -v
@@ -45,7 +49,7 @@ First go to bitbucker or github and create your repository, make sure it is not 
 	git init
 	git add --all
 	git commit -m 'First commit'
-	git branch -m master OR any other name you like
+	git branch -m master OR any other name you like(e.g. main, reg, mine)
 	git remote add origin {URL}.git
 	git remote -v
 	git push -u origin master (must match branch above)
