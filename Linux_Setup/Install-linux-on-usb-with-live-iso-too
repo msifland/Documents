@@ -179,6 +179,16 @@ ________________________________________________________________________
 -Entries to put in grub.cfg or if /etc/grub.d/40_custom(41_custom)
 ### Customer Entry ###
 exec tail -n +3 $0
+########## This one is for my own created build(either with live-build OR my own)
+menuentry "Debian MY_live-build_11-15-25" {
+	# Format for Debian
+	search --no-floppy --fs-uuid --set=root 7f895ba6-f644-4750-a70a-0ec30ddaea21
+	set isofile="/iso/MSI_live/MSI_live-image-amd64.hybrid.iso"
+	search --set -f $isofile
+	loopback loop $isofile
+	linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/7f895ba6-f644-4750-a70a-0ec30ddaea21/$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago quickreboot
+	initrd (loop)/live/initrd.img
+}
 
 menuentry "Debian Installer From Live.iso" {
 		insmod part_msdos
@@ -210,6 +220,15 @@ menuentry "Mate 18.04 Live-ISO" {
 	loopback loop (hd0,msdos1)$isofile
 	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
 	initrd (loop)/casper/initrd.lz
+}
+#######this one is better using the uuid for more reliable booting
+menuentry "Ubuntu-Mate 21.04 Live-ISO" {
+	# Format for Ubuntu based
+	search --no-floppy --fs-uuid --set=root 7f895ba6-f644-4750-a70a-0ec30ddaea21
+	set isofile="/iso/Ubuntu-Mate/ubuntu-mate-21.04-desktop-amd64.iso"
+	loopback loop $isofile
+	linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+	initrd (loop)/casper/initrd
 }
 ### End Custom entry ###
 
