@@ -1,6 +1,4 @@
-Copy Debian live iso to usb /dev/sdX# /home/msifland/iso/MSI_live/
-Open .iso and copy the /live/initrd.img, /live/vmlinuz, and /install initrd.gz to above listed folder
-	-NOTE: initrd.img is for live and initrd.gz is for installer, vmlinuz should be for both.
+Copy Debian live iso to usb /dev/sdX# /home/msifland/iso/MSI_live/, other dirs may include /misc/iso/MY_live, /iso/MSI_live. It just depends on where you are keeping your iso files.
 	-There could also be initrd adn vmlinuz with name and numbers after them, those are okay to use as well, but you have to put those letters and numbers in the grub entries below.
 	-For the entries below you have have to get the UUID of the directory with the iso files in it. This is more stable than using the old way of (hd0,msdos4).
 	-To get the UUID, open terminal and type:
