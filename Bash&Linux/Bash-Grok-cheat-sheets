@@ -1,0 +1,184 @@
+# --------------------- Must run as root ----------------------------
+if [[ "$EUID" -ne 0 ]]; then
+    echo "ERROR: This script must be run as root!"
+    exit 1
+fi
+# ------------------------Custom Helper Functions ------------------------
+log()    { echo -e "\n\033[1;36m==>\033[0m \033[1;33m$*\033[0m\n"; }
+error()  { echo -e "\033[1;31mERROR: $*\033[0m" >&2; exit 1; }
+ask()    { read -rp "$1 [y/N] " ans; [[ "$ans" =~ ^[[yY]|[yY][eE][sS]$ ]]; }
+#-----------------Warnings and errors----------------------------------
+# Color output (define once at top)
+RED='\e[31m'; GREEN='\e[32m'; YELLOW='\e[33m'; NC='\e[0m'
+
+die() { echo -e "${RED}ERROR: $*${NC}" >&2; exit 1; }
+warn() { echo -e "${YELLOW}Warning: $*${NC}" >&2; }
+info() { echo -e "${GREEN}$*${NC}"; }
+
+# Usage
+[[ $EUID -eq 0 ]] || die "Run as root"
+[[ -f important.txt ]] || die "Missing important.txt"
+#--------------Safe & Clean Script Header (copy-paste this)---------------
+#!/usr/bin/env bash
+set -euo pipefail          # Crash on error, unset vars, failed pipes
+IFS=$'\n\t'                # Better word splitting
+shopt -s nullglob globstar # ** matches recursively, empty globs = nothing
+
+
+1. Parameter Expansion Magic
+var="/path/to/dir/"          # example string
+
+# Remove trailing slash (any number, shortest match)
+echo "${var%/}"              # → /path/to/dir
+
+# Remove trailing slash (greedy, removes everything after last /)
+echo "${var%%/*}"            # → (empty if it starts with /)
+
+# Remove leading slash (shortest match)
+echo "${var#/}"              # → path/to/dir/
+
+# Remove leading slash, greedy (removes everything up to last /)
+echo "${var##*/}"            # → dir/
+
+# Remove both leading and trailing slashes in one go
+clean="${var#/}"             # strip leading
+clean="${clean%/}"           # strip trailing
+echo "$clean"                # → path/to/dir
+
+# One-liner version of the above (my favorite)
+clean="${var#/}" ; clean="${clean%/}"
+# or even:
+clean="${var#"/"}" ; clean="${clean%"/"}"
+
+
+filename="archive.tar.gz"
+echo "${filename%.tar.gz}"   # → archive
+echo "${filename%%.*}"       # → archive           (greedy)
+echo "${filename#*.}"        # → tar.gz
+echo "${filename##*.}"       # → gz                (last extension)
+
+${var#pattern}    # Strip shortest match from LEFT
+${var##pattern}   # Strip longest match from LEFT
+${var%pattern}    # Strip shortest match from RIGHT
+${var%%pattern}   # Strip longest match from RIGHT
+
+${var/pattern/repl}   # Replace first occurrence
+${var//pattern/repl}  # Replace ALL occurrences
+${var/#pattern/repl}  # Replace only if at beginning
+${var/%pattern/repl}  # Replace only if at end
+
+${var:-default}   # Use default if var empty or unset
+${var:=default}   # Use default AND assign it if empty
+${var:+value}     # Use value only if var is set and non-empty
+${var:?message}   # Die with message if empty/unset
+${# Examples
+name="/home/user/Downloads/"
+clean="${name%/}"                  # → /home/user/Downloads
+basename="${clean##*/}"            # → Downloads
+extension="${file##*.}"            # → gz
+file_noext="${file%.*}"            # → archive.tar
+
+
+3 Arrays Quick Reference
+files=(*)                          # All files in current dir
+files=(*.sh)                       # Only .sh files
+files=(/path/to/*.jpg)             # With nullglob, empty = zero elements
+
+for f in "${files[@]}"; do ...     # Always quote "@" !
+echo "${#files[@]}"                # Number of elements
+echo "${files[0]}"                 # First element
+echo "${files[-1]}"                # Last element (bash 4.4+)
+echo "${files[@]:2:3}"             # Elements 2,3,4 (0-indexed)
+joined="${files[*]:0:1}"           # Join with first char of IFS
+joined="${files[*]// /_}"          # Replace spaces
+
+
+4 Reading Files & Commands Into Arrays
+mapfile -t lines < file.txt                 # Whole file → array
+mapfile -t pkgs < <(dpkg -l | tail -n +6)   # Command output → array
+read -r -a words <<< "one two three"        # String → array
+
+
+5 Here-Documents & Here-Strings You’ll Use Constantly
+cat <<EOF
+Multiple
+lines
+without quotes!
+EOF
+
+
+cat <<< "Single line without quotes"
+
+# Safest way to pass multiline text to a command
+ssh user@host bash <<'SSH_EOF'
+  set -euo pipefail
+  echo "Running remotely"
+  uptime
+SSH_EOF
+
+
+6 Useful One-Liners (still very readable)
+# Backup with timestamp
+cp file.conf "file.conf.$(date +%F_%H%M%S).bak"
+
+# Run command only if file changed
+[[ file.txt -nt file.txt.bak ]] && cp file.txt file.txt.bak
+
+# Quiet commands but still fail on error
+command_that_makes_noise >/dev/null || true
+
+# Wait for file to appear (max 30 sec)
+timeout 30 bash -c 'until [[ -f /tmp/ready ]]; do sleep 1; done'
+
+# Convert string to lowercase (bash 4+)
+filename="${filename,,}"
+
+
+7 Real-World Patterns I Use in Every Script
+# Color output (define once at top)
+RED='\e[31m'; GREEN='\e[32m'; YELLOW='\e[33m'; NC='\e[0m'
+
+die() { echo -e "${RED}ERROR: $*${NC}" >&2; exit 1; }
+warn() { echo -e "${YELLOW}Warning: $*${NC}" >&2; }
+info() { echo -e "${GREEN}$*${NC}"; }
+
+# Usage
+[[ $EUID -eq 0 ]] || die "Run as root"
+[[ -f important.txt ]] || die "Missing important.txt"
+
+# Temporary directory that always gets cleaned
+tmpdir=$(mktemp -d) || die "mktemp failed"
+trap 'rm -rf "$tmpdir"' EXIT
+
+
+8 My Personal Top-10 Favorite Tricks
+# 1. Run previous command as root
+sudo !!
+
+# 2. Reuse last argument of previous command
+cp file.txt !$
+
+# 3. Reuse all arguments of previous command
+echo !*
+
+# 4. Edit previous command quickly
+Ctrl+x Ctrl+e   # opens $EDITOR with last command
+
+# 5. Search command history interactively
+Ctrl+r
+
+# 6. Expand alias before running
+Ctrl+Alt+e
+
+# 7. Quick path completion with **/
+cd /etc/systemd/system/**/timer<TAB>
+
+# 8. Run last command that started with "git"
+!git
+
+# 9. Process substitution instead of pipes (keeps variables)
+diff <(ls dir1) <(ls dir2)
+
+# 10. Brace expansion is insane
+mkdir -p /backup/{2025..2026}/{01..12}/{01..31}
+echo {a..z}{A..Z}{0..9} | tr -d ' '  # password ideas
