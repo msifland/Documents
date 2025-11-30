@@ -26,3 +26,33 @@ menuentry "Ubuntu-Mate 21.04 Live-ISO" {
 }
 
 Run sudo update-grub
+
+
+
+
+
+#This if for working with the same build but with perist and non-persist options on same build.
+<<comment
+# /etc/grub.d/40_custom
+# Debian MATE Live – Normal + Persistent entries
+# Updated: 2025
+
+menuentry "Debian MY_live-build_11-27-25 (standard – RAM mode)" {
+    search --no-floppy --fs-uuid --set=root f417d30a-7c2a-4971-bfde-78d9f78e9699
+    set isofile="/home/msifland/iso/MSI_live/MSI_live-image-amd64.hybrid.iso"
+    search --set -f $isofile
+    loopback loop $isofile
+    linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/f417d30a-7c2a-4971-bfde-78d9f78e9699/$isofile \
+          boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago quickreboot
+    initrd (loop)/live/initrd.img
+}
+
+menuentry "Debian MY_live-build_11-27-25 (persistent – all changes saved)" {
+    search --no-floppy --fs-uuid --set=root f417d30a-7c2a-4971-bfde-78d9f78e9699
+    set isofile="/home/msifland/iso/MSI_live/MSI_live-image-amd64.hybrid.iso"
+    search --set -f $isofile
+    loopback loop $isofile
+    linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/f417d30a-7c2a-4971-bfde-78d9f78e9699/$isofile boot=live config persistence persistence-label=casper-rw live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago quickreboot
+    initrd (loop)/live/initrd.img
+}
+comment

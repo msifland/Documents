@@ -1,0 +1,23 @@
+Command		Octal	Meaning								Typical Use
+chmod 644	644		"owner: rw, group+others: r only",	"Regular files (e.g., .txt, .py)"
+chmod 755	755		"owner: rwx, group+others: rx (can list/run)",Directories and executables
+chmod 700	700		Only owner can read/write/execute,Private stuff (~/.ssh)
+chmod 600	600		"Only owner can read/write, no execute",	"Private keys, config files"
+chmod 777	777		Everyone can do everything ← Dangerous!,	Only for  		/tmp-like shared dirs
+
+Quick mental cheat sheet:
+7 = “I can do anything”
+6 = “I can read and write”
+5 = “I can read and execute”
+4 = “I can read only”
+0 = “I can’t do anything”
+
+Examples:
+# Make all .sh files in current directory executable for owner
+chmod u+x *.sh
+
+# Make a directory tree readable/executable but not writable by others
+chmod -R 755 /path/to/webroot
+
+# Lock down a file so only you can touch it
+chmod 600 ~/.netrc
