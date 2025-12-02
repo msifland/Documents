@@ -1,0 +1,38 @@
+Writing an ISO image to a single partition using dd typically doesn't work for creating a bootable, persistent live USB because hybrid ISOs contain their own partition table that needs to be written to the entire device's boot sector, overwriting any pre-existing partition structure. 
+To achieve a single-partition USB with persistence after using dd, you must create the persistence file in the remaining free space after flashing the ISO to the entire device (/dev/sdX, not /dev/sdX1).
+Here is the correct workflow for a single-partition outcome that includes a persistence file:
+Workflow for a Single Partition with Persistence File
+This method assumes you have already prepared your live-rw file and configured persistence.conf within it as described previously.
+Write the ISO to the entire USB device
+Use dd to write the Debian hybrid ISO to the raw device (/dev/sdX), not the partition (/dev/sdX1). This overwrites existing partitions but creates a new, smaller partition structure defined by the ISO itself.
+bash
+# Identify your USB device first using lsblk or fdisk -l
+sudo dd if=/path/to/debian-live.iso of=/dev/sdX bs=4M status=progress
+sync # Flush the write buffer
+Use code with caution.
+
+Mount the newly created partition
+After dd finishes, the USB drive will have a single partition visible (usually /dev/sdX1) which contains the live system files. Unplug and replug the USB stick if it doesn't automatically remount.
+Place the live-rw persistence file
+Mount the new partition (e.g., to /mnt/usb). Copy the live-rw file you created earlier into the root directory of this mounted partition.
+bash
+# Mount the USB partition
+sudo mount /dev/sdX1 /mnt/usb
+
+# Copy the prepared live-rw file to the root of the USB
+sudo cp /path/to/your/prepared/live-rw /mnt/usb/
+
+# Unmount the USB
+sudo umount /mnt/usb
+Use code with caution.
+
+ 
+General question about using dd and writing to a base drive ...
+Sep 15, 2021 — May google be with you! * spxak1. • 4y ago. Top 1% Commenter. You cannot a bootable Win10 USB with dd, as that ISO is ...
+
+Reddit
+Does it matter to partition something before dd? - Server Fault
+Jul 5, 2021 — 1 Answer. Sorted by: Yes, the ISO image contains its own partition table, and thus it should be copied directly to the ...
+
+Server Fault
+This sequence results in a single visible partition (formatted by the ISO's structure) that contains the necessary live-rw file in its root directory, which the live-boot scripts (if properly installed in your custom ISO) will detect at boot when the persistent parameter is used.
