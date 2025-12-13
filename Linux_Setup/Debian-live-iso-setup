@@ -68,7 +68,7 @@ menuentry "EndeavourOS_Ganymede-2025.11.24.iso" { #<<<< ISO NAME HERE
      search --no-floppy --fs-uuid --set=root $uuid
      set isofile="/isos/EndeavourOS_Ganymede-2025.11.24.iso" #<<<< ISO NAME HERE
      loopback loop $isofile
-     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop
+     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop archisodevice=/dev/loop0
      initrd (loop)/arch/boot/x86_64/initramfs-linux.img
 }
 
@@ -77,10 +77,9 @@ menuentry "archbang-rc-2911-x86_64.iso" { #<<<< ISO NAME HERE
      search --no-floppy --fs-uuid --set=root $uuid
      set isofile="/isos/archbang-rc-2911-x86_64.iso" #<<<< ISO NAME HERE
      loopback loop $isofile
-     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop
+     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop archisodevice=/dev/loop0
      initrd (loop)/arch/boot/x86_64/initramfs-linux.img
 }
-
 
 Run sudo update-grub
 
