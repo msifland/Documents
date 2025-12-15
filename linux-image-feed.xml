@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux Images Feed</title>
+    <link>https://example.com/linux-images</link>
+    <description>A media RSS feed showcasing images related to Linux, including Tux, terminals, desktops, and more.</description>
+    <language>en-us</language>
+    <pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate>
+    <lastBuildDate>Mon, 15 Dec 2025 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://example.com/linux-images-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Tux the Linux Mascot</title>
+      <link>https://www.makeuseof.com/why-is-linux-logo-a-penguin-tux/</link>
+      <description>Classic image of Tux, the official Linux penguin mascot.</description>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate>
+      <guid>https://www.makeuseof.com/linux-tux</guid>
+      <media:content url="https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2022/03/Linux-logo.jpg" medium="image" type="image/jpeg"/>
+      <media:title>Tux the Linux Mascot</media:title>
+    </item>
+
+    <item>
+      <title>GNOME vs KDE Desktop Environments</title>
+      <link>https://www.makeuseof.com/linux-kde-vs-gnome/</link>
+      <description>Comparison screenshot of GNOME and KDE Linux desktop environments.</description>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate>
+      <guid>https://www.makeuseof.com/gnome-kde</guid>
+      <media:content url="https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2021/07/gnome-vs-kde.jpg" medium="image" type="image/jpeg"/>
+      <media:title>GNOME vs KDE Desktops</media:title>
+    </item>
+
+    <item>
+      <title>Linux Server Rack in Data Center</title>
+      <link>https://www.datacenterknowledge.com/supply-chain/1-mw-racks-and-supply-chain-resilience-planning-for-the-data-centers-of-the-future</link>
+      <description>High-density server rack commonly used in Linux-based data centers.</description>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate>
+      <guid>https://datacenterknowledge.com/server-rack</guid>
+      <media:content url="https://eu-images.contentstack.com/v3/assets/blt8eb3cdfc1fce5194/blt998da09612b5b10b/6883e015c6e4c1044832cd17/Nvidia-Rack.jpg?width=1280&auto=webp&quality=80" medium="image" type="image/jpeg"/>
+      <media:title>Linux Server Rack</media:title>
+    </item>
+
+    <item>
+      <title>Official Linux Logo</title>
+      <link>https://1000logos.net/linux-logo/</link>
+      <description>The iconic Linux penguin logo (Tux).</description>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate>
+      <guid>https://1000logos.net/linux-logo</guid>
+      <media:content url="https://1000logos.net/wp-content/uploads/2017/03/Linux-Logo-2008.png" medium="image" type="image/png"/>
+      <media:title>Linux Logo with Tux</media:title>
+    </item>
+
+  </channel>
+</rss>
