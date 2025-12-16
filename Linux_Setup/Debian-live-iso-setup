@@ -24,10 +24,10 @@ menuentry "----------------------------------------" { true }
 ######### and look at the paths for clarification
 uuid=""   #<<<YOUR_UUID_FOR_ISO_DEVICE   /misc
 #### Template for debian-live non-persist
- menuentry "debian-live-testing-amd64-lxde.iso" { #<<<< ISO NAME HERE
+ menuentry "MSI_live-image-amd64.hybrid.lxde.iso" { #<<<< ISO NAME HERE
     # Format for Debian
     search --no-floppy --fs-uuid --set=root $uuid
-    set isofile="/isos/debian-live-testing-amd64-lxde.iso" #<<<< ISO NAME HERE
+    set isofile="/isos/MSI_live-image-amd64.hybrid.lxde.iso" #<<<< ISO NAME HERE
     search --set -f $isofile
     loopback loop $isofile
     linux (loop)/live/vmlinuz quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
